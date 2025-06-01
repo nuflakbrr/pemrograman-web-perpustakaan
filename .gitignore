@@ -25,3 +25,8 @@ Homestead.yaml
 npm-debug.log
 Thumbs.db
 yarn-error.log
+composer.lock
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+bun.lock
