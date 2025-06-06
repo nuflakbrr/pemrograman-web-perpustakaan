@@ -12,20 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('buku', function (Blueprint $table) {
-            $table->id('buku_id');
+            $table->id();
             $table->string('nama_buku');
             $table->string('judul');
             $table->string('penulis');
             $table->string('penerbit');
             $table->year('tahun_penerbitan');
-            $table->string('ISBN');
+            $table->string('ISBN')->unique();
+            $table->text('cover')->nullable();
             $table->unsignedInteger('jumlah_tersedia');
-
-            // Foreign Key ke kategori_buku
-            $table->foreignId('kategori_id')
-                ->constrained('kategori_buku', 'kategori_id')
-                ->onDelete('restrict');
-
+            $table->foreignId('kategori_id')->constrained('kategori_buku')->onDelete('restrict');
             $table->timestamps();
         });
     }

@@ -12,25 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('peminjaman', function (Blueprint $table) {
-            $table->id('peminjaman_id');
-
-            // Foreign Keys ke anggota, buku, petugas
-            $table->foreignId('anggota_id')
-                ->constrained('anggota', 'anggota_id')
-                ->onDelete('restrict');
-
-            $table->foreignId('buku_id')
-                ->constrained('buku', 'buku_id')
-                ->onDelete('restrict');
-
-            $table->foreignId('petugas_id')
-                ->constrained('petugas', 'petugas_id')
-                ->onDelete('restrict');
-
+            $table->id();
+            $table->foreignId('anggota_id')->constrained('anggota')->onDelete('restrict');
+            $table->foreignId('buku_id')->constrained('buku')->onDelete('restrict');
+            $table->foreignId('petugas_id')->constrained('users')->onDelete('restrict');
             $table->date('tanggal_peminjaman');
             $table->date('tanggal_pengembalian')->nullable();
             $table->enum('status', ['dipinjam', 'dikembalikan'])->default('dipinjam');
-
             $table->timestamps();
         });
     }
