@@ -252,10 +252,6 @@
                             <a class="dropdown-item" href="#">Profile</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">Privacy
-                                Setting</a>
-                        </li>
-                        <li>
                             <hr class="dropdown-divider">
                         </li>
                         <li>
