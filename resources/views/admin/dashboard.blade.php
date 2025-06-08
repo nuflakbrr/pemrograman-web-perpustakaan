@@ -1,36 +1,4 @@
 <x-app-layout>
-    <!-- Nav Header Component Start -->
-    <div class="iq-navbar-header" style="height: 215px;">
-        <div class="container-fluid iq-container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="flex-wrap d-flex justify-content-between align-items-center">
-                        <div>
-                            <h1>Halo {{ Auth::user()->nama_petugas }}!</h1>
-                            <p>Terimakasih telah menjaga semuanya terkendali. Anda sangat hebat!</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="iq-header-img">
-            <img src="{{ asset('assets/images/dashboard/top-header.png') }}" alt="header"
-                class="theme-color-default-img img-fluid w-100 h-100 animated-scaleX">
-            <img src="{{ asset('assets/images/dashboard/top-header1.png') }}" alt="header"
-                class="theme-color-purple-img img-fluid w-100 h-100 animated-scaleX">
-            <img src="{{ asset('assets/images/dashboard/top-header2.png') }}" alt="header"
-                class="theme-color-blue-img img-fluid w-100 h-100 animated-scaleX">
-            <img src="{{ asset('assets/images/dashboard/top-header3.png') }}" alt="header"
-                class="theme-color-green-img img-fluid w-100 h-100 animated-scaleX">
-            <img src="{{ asset('assets/images/dashboard/top-header4.png') }}" alt="header"
-                class="theme-color-yellow-img img-fluid w-100 h-100 animated-scaleX">
-            <img src="{{ asset('assets/images/dashboard/top-header5.png') }}" alt="header"
-                class="theme-color-pink-img img-fluid w-100 h-100 animated-scaleX">
-        </div>
-    </div>
-    <!-- Nav Header Component End -->
-
     <div class="conatiner-fluid content-inner mt-n5 py-0">
         <div class="row">
             <div class="col-md-12 col-lg-12">
@@ -114,8 +82,7 @@
                                     <div class="progress-widget">
                                         <div id="circle-progress-05"
                                             class="text-center circle-progress-01 circle-progress circle-progress-primary"
-                                            data-min-value="0" data-max-value="100" data-value="50"
-                                            data-type="percent">
+                                            data-min-value="0" data-max-value="100" data-value="50" data-type="percent">
                                             <svg class="card-slie-arrow icon-24" width="24px" viewBox="0 0 24 24">
                                                 <path fill="currentColor"
                                                     d="M5,17.59L15.59,7H9V5H19V15H17V8.41L6.41,19L5,17.59Z" />

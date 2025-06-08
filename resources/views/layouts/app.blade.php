@@ -54,6 +54,9 @@
     <main class="main-content">
         <div class="position-relative iq-banner">
             @include('layouts.partials.navbar')
+
+            @include('layouts.partials.header')
+
             {{ $slot }}
         </div>
 
