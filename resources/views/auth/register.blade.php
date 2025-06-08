@@ -13,9 +13,6 @@
                                 <div class="card-body">
                                     <a href="#" class="navbar-brand d-flex align-items-center mb-3">
                                         <!--Logo start-->
-                                        <!--logo End-->
-
-                                        <!--Logo start-->
                                         <div class="logo-main">
                                             <div class="logo-normal">
                                                 <svg class="text-primary icon-30" viewBox="0 0 30 30" fill="none"
@@ -53,97 +50,83 @@
                                             </div>
                                         </div>
                                         <!--logo End-->
+
                                         <h4 class="logo-title ms-3">Hope UI</h4>
                                     </a>
+
                                     <h2 class="mb-2 text-center">Sign Up</h2>
                                     <p class="text-center">Create your Hope UI account.</p>
-                                    <form>
+
+                                    <form action="{{ route('register') }}" method="POST">
+                                        @csrf
+                                        @method('POST')
                                         <div class="row">
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="full-name" class="form-label">Full Name</label>
-                                                    <input type="text" class="form-control" id="full-name"
-                                                        placeholder=" ">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="last-name" class="form-label">Last Name</label>
-                                                    <input type="text" class="form-control" id="last-name"
-                                                        placeholder=" ">
+                                                    <label for="nama_petugas" class="form-label">Nama Lengkap</label>
+                                                    <input type="text" class="form-control" id="nama_petugas"
+                                                        name="nama_petugas" value="{{ old('nama_petugas') }}">
+                                                    @error('nama_petugas')
+                                                        <p class="pt-1 text-xs text-danger">{{ $message }}</p>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label for="email" class="form-label">Email</label>
                                                     <input type="email" class="form-control" id="email"
-                                                        placeholder=" ">
+                                                        name="email" value="{{ old('email') }}"
+                                                        placeholder="your@mail.com">
+                                                    @error('email')
+                                                        <p class="pt-1 text-xs text-danger">{{ $message }}</p>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="phone" class="form-label">Phone No.</label>
-                                                    <input type="text" class="form-control" id="phone"
-                                                        placeholder=" ">
+                                                    <label for="nomor_telepon" class="form-label">No. Telepon</label>
+                                                    <input type="text" class="form-control" id="nomor_telepon"
+                                                        name="nomor_telepon" value="{{ old('nomor_telepon') }}">
+                                                    @error('nomor_telepon')
+                                                        <p class="pt-1 text-xs text-danger">{{ $message }}</p>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label for="position" class="form-label">Jabatan</label>
+                                                    <input type="text" class="form-control" id="position"
+                                                        name="position" value="{{ old('position') }}">
+                                                    @error('position')
+                                                        <p class="pt-1 text-xs text-danger">{{ $message }}</p>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label for="password" class="form-label">Password</label>
                                                     <input type="password" class="form-control" id="password"
-                                                        placeholder=" ">
+                                                        name="password">
+                                                    @error('password')
+                                                        <p class="pt-1 text-xs text-danger">{{ $message }}</p>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="confirm-password" class="form-label">Confirm
+                                                    <label for="password_confirmation" class="form-label">Konfirmasi
                                                         Password</label>
-                                                    <input type="text" class="form-control" id="confirm-password"
-                                                        placeholder=" ">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12 d-flex justify-content-center">
-                                                <div class="form-check mb-3">
-                                                    <input type="checkbox" class="form-check-input"
-                                                        id="customCheck1">
-                                                    <label class="form-check-label" for="customCheck1">I agree with
-                                                        the terms of
-                                                        use</label>
+                                                    <input type="password" class="form-control"
+                                                        id="password_confirmation" name="password_confirmation">
+                                                    @error('password_confirmation')
+                                                        <p class="pt-1 text-xs text-danger">{{ $message }}</p>
+                                                    @enderror
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="d-flex justify-content-center">
                                             <button type="submit" class="btn btn-primary">Sign Up</button>
                                         </div>
-                                        <p class="text-center my-3">or sign in with other accounts?</p>
-                                        <div class="d-flex justify-content-center">
-                                            <ul class="list-group list-group-horizontal list-group-flush">
-                                                <li class="list-group-item border-0 pb-0">
-                                                    <a href="#"><img
-                                                            src="{{ asset('assets/images/brands/fb.svg') }}"
-                                                            alt="fb"></a>
-                                                </li>
-                                                <li class="list-group-item border-0 pb-0">
-                                                    <a href="#"><img
-                                                            src="{{ asset('assets/images/brands/gm.svg') }}"
-                                                            alt="gm"></a>
-                                                </li>
-                                                <li class="list-group-item border-0 pb-0">
-                                                    <a href="#"><img
-                                                            src="{{ asset('assets/images/brands/im.svg') }}"
-                                                            alt="im"></a>
-                                                </li>
-                                                <li class="list-group-item border-0 pb-0">
-                                                    <a href="#"><img
-                                                            src="{{ asset('assets/images/brands/li.svg') }}"
-                                                            alt="li"></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <p class="mt-3 text-center">
-                                            Already have an Account <a href="sign-in.html" class="text-underline">Sign
-                                                In</a>
-                                        </p>
                                     </form>
                                 </div>
                             </div>

@@ -243,8 +243,8 @@
                         <img src="{{ asset('assets/images/avatars/avtar_3.png') }}" alt="User-Profile"
                             class="theme-color-pink-img img-fluid avatar avatar-50 avatar-rounded">
                         <div class="caption ms-3 d-none d-md-block ">
-                            <h6 class="mb-0 caption-title">Austin Robertson</h6>
-                            <p class="mb-0 caption-sub-title">Marketing Administrator</p>
+                            <h6 class="mb-0 caption-title">{{ Auth::user()->nama_petugas }}</h6>
+                            <p class="mb-0 caption-sub-title">{{ Auth::user()->position }}</p>
                         </div>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -259,7 +259,11 @@
                             <hr class="dropdown-divider">
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">Logout</a>
+                            <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                @method('POST')
+                                <button class="dropdown-item" type="submit">Logout</button>
+                            </form>
                         </li>
                     </ul>
                 </li>

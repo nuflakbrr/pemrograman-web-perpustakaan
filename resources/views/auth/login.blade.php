@@ -1,7 +1,4 @@
 <x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
-
     <div class="wrapper">
         <section class="login-content">
             <div class="row m-0 align-items-center bg-white vh-100">
@@ -11,9 +8,6 @@
                             <div class="card card-transparent shadow-none d-flex justify-content-center mb-0 auth-card">
                                 <div class="card-body">
                                     <a href="#" class="navbar-brand d-flex align-items-center mb-3">
-                                        <!--Logo start-->
-                                        <!--logo End-->
-
                                         <!--Logo start-->
                                         <div class="logo-main">
                                             <div class="logo-normal">
@@ -57,64 +51,45 @@
                                     </a>
                                     <h2 class="mb-2 text-center">Sign In</h2>
                                     <p class="text-center">Login to stay connected.</p>
-                                    <form>
+
+                                    <form action="{{ route('login') }}" method="POST">
+                                        @csrf
+                                        @method('POST')
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="form-group">
                                                     <label for="email" class="form-label">Email</label>
                                                     <input type="email" class="form-control" id="email"
-                                                        aria-describedby="email" placeholder=" ">
+                                                        aria-describedby="email" placeholder="your@mail.com"
+                                                        name="email" value="{{ old('email') }}">
+                                                    @error('email')
+                                                        <p class="pt-1 text-xs text-danger">{{ $message }}</p>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="col-lg-12">
                                                 <div class="form-group">
                                                     <label for="password" class="form-label">Password</label>
                                                     <input type="password" class="form-control" id="password"
-                                                        aria-describedby="password" placeholder=" ">
+                                                        name="password" autocomplete="current-password"
+                                                        aria-describedby="password" placeholder="********">
+                                                    @error('password')
+                                                        <p class="pt-1 text-xs text-danger">{{ $message }}</p>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="col-lg-12 d-flex justify-content-between">
                                                 <div class="form-check mb-3">
-                                                    <input type="checkbox" class="form-check-input" id="customCheck1">
-                                                    <label class="form-check-label" for="customCheck1">Remember
+                                                    <input type="checkbox" class="form-check-input" id="remember_me"
+                                                        name="remember">
+                                                    <label class="form-check-label" for="remember_me">Remember
                                                         Me</label>
                                                 </div>
-                                                <a href="recoverpw.html">Forgot Password?</a>
                                             </div>
                                         </div>
                                         <div class="d-flex justify-content-center">
                                             <button type="submit" class="btn btn-primary">Sign In</button>
                                         </div>
-                                        <p class="text-center my-3">or sign in with other accounts?</p>
-                                        <div class="d-flex justify-content-center">
-                                            <ul class="list-group list-group-horizontal list-group-flush">
-                                                <li class="list-group-item border-0 pb-0">
-                                                    <a href="#"><img
-                                                            src="{{ asset('../../assets/images/brands/fb.svg') }}"
-                                                            alt="fb"></a>
-                                                </li>
-                                                <li class="list-group-item border-0 pb-0">
-                                                    <a href="#"><img
-                                                            src="{{ asset('../../assets/images/brands/gm.svg') }}"
-                                                            alt="gm"></a>
-                                                </li>
-                                                <li class="list-group-item border-0 pb-0">
-                                                    <a href="#"><img
-                                                            src="{{ asset('../../assets/images/brands/im.svg') }}"
-                                                            alt="im"></a>
-                                                </li>
-                                                <li class="list-group-item border-0 pb-0">
-                                                    <a href="#"><img
-                                                            src="{{ asset('../../assets/images/brands/li.svg') }}"
-                                                            alt="li"></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <p class="mt-3 text-center">
-                                            Don’t have an account? <a href="sign-up.html" class="text-underline">Click
-                                                here to sign
-                                                up.</a>
-                                        </p>
                                     </form>
                                 </div>
                             </div>
