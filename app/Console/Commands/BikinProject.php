@@ -60,7 +60,7 @@ class BikinProject extends Command
         info('Starting BikinProject: Laravel + Filament installation...');
 
         // Remove existing Git repository first
-        $this->removeGitRepository();
+        // $this->removeGitRepository();
         $this->nodePackageManager();
         $this->setupEnvFile();
         $this->reloadEnvironment();
@@ -74,7 +74,7 @@ class BikinProject extends Command
         $this->cleanup();
 
         // Initialize Git repository after cleanup if requested
-        $this->initializeGitRepository();
+        // $this->initializeGitRepository();
 
         info('BikinProject: Laravel + Filament installation completed successfully! 🎉');
         info('👉 Run `php artisan solo` (if you install solo in Linux / Mac only) or `composer run dev` to start the local server.');
