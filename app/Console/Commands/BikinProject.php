@@ -25,7 +25,7 @@ class BikinProject extends Command
      *
      * @var string
      */
-    protected $description = 'Run the BikinProject: Laravel + Filament installation process';
+    protected $description = 'Run the BikinProject: Laravel installation process';
 
     /**
      * Additioanl Package.
@@ -57,7 +57,7 @@ class BikinProject extends Command
             return 'local';
         });
 
-        info('Starting BikinProject: Laravel + Filament installation...');
+        info('Starting BikinProject: Laravel installation...');
 
         // Remove existing Git repository first
         // $this->removeGitRepository();
@@ -76,7 +76,7 @@ class BikinProject extends Command
         // Initialize Git repository after cleanup if requested
         // $this->initializeGitRepository();
 
-        info('BikinProject: Laravel + Filament installation completed successfully! 🎉');
+        info('BikinProject: Laravel installation completed successfully! 🎉');
         info('👉 Run `php artisan solo` (if you install solo in Linux / Mac only) or `composer run dev` to start the local server.');
         info('Happy Coding! 👋');
     }
@@ -104,7 +104,7 @@ class BikinProject extends Command
     private function nodePackageManager()
     {
         // Run npm install
-        if (!File::exists('node_modules')) {
+        if (!File::isDirectory('node_modules')) {
             $this->nodePackageManager = select(
                 label: '🤔 Which Node.js package manager would you like to use?',
                 options: ['npm', 'yarn', 'pnpm', 'bun'],
