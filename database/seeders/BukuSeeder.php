@@ -12,52 +12,47 @@ class BukuSeeder extends Seeder
     {
         $bukus = [
             [
-                'nama_buku' => 'Laskar Pelangi',
-                'judul' => 'Laskar Pelangi',
+                'judul_buku' => 'Laskar Pelangi',
                 'penulis' => 'Andrea Hirata',
                 'penerbit' => 'Bentang Pustaka',
                 'tahun_penerbitan' => 2005,
-                'ISBN' => '978-979-17-0167-2',
+                'isbn' => '978-979-17-0167-2',
                 'jumlah_tersedia' => 5,
                 'kategori_id' => 1, // Fiksi
             ],
             [
-                'nama_buku' => 'Filosofi Teras',
-                'judul' => 'Filosofi Teras',
+                'judul_buku' => 'Filosofi Teras',
                 'penulis' => 'Henry Manampiring',
                 'penerbit' => 'Kompas Gramedia',
                 'tahun_penerbitan' => 2018,
-                'ISBN' => '978-602-03-5829-1',
+                'isbn' => '978-602-03-5829-1',
                 'jumlah_tersedia' => 3,
                 'kategori_id' => 2, // Non-Fiksi
             ],
             [
-                'nama_buku' => 'Clean Code',
-                'judul' => 'Clean Code: A Handbook of Agile Software Craftsmanship',
+                'judul_buku' => 'Clean Code: A Handbook of Agile Software Craftsmanship',
                 'penulis' => 'Robert C. Martin',
                 'penerbit' => 'Prentice Hall',
                 'tahun_penerbitan' => 2008,
-                'ISBN' => '978-0-13-235088-4',
+                'isbn' => '978-0-13-235088-4',
                 'jumlah_tersedia' => 2,
                 'kategori_id' => 3, // Teknologi
             ],
             [
-                'nama_buku' => 'Sejarah Indonesia',
-                'judul' => 'Sejarah Indonesia Modern 1200-2008',
+                'judul_buku' => 'Sejarah Indonesia Modern 1200-2008',
                 'penulis' => 'M.C. Ricklefs',
                 'penerbit' => 'Serambi',
                 'tahun_penerbitan' => 2008,
-                'ISBN' => '978-979-99-4072-6',
+                'isbn' => '978-979-99-4072-6',
                 'jumlah_tersedia' => 4,
                 'kategori_id' => 4, // Sejarah
             ],
             [
-                'nama_buku' => 'Sapiens',
-                'judul' => 'Sapiens: A Brief History of Humankind',
+                'judul_buku' => 'Sapiens: A Brief History of Humankind',
                 'penulis' => 'Yuval Noah Harari',
                 'penerbit' => 'Harvill Secker',
                 'tahun_penerbitan' => 2014,
-                'ISBN' => '978-0-06-231609-7',
+                'isbn' => '978-0-06-231609-7',
                 'jumlah_tersedia' => 3,
                 'kategori_id' => 5, // Sains
             ],
@@ -65,12 +60,11 @@ class BukuSeeder extends Seeder
 
         foreach ($bukus as $buku) {
             DB::table('buku')->insert([
-                'nama_buku' => $buku['nama_buku'],
-                'judul' => $buku['judul'],
+                'judul_buku' => $buku['judul_buku'],
                 'penulis' => $buku['penulis'],
                 'penerbit' => $buku['penerbit'],
                 'tahun_penerbitan' => $buku['tahun_penerbitan'],
-                'ISBN' => $buku['ISBN'],
+                'isbn' => $buku['isbn'],
                 'jumlah_tersedia' => $buku['jumlah_tersedia'],
                 'kategori_id' => $buku['kategori_id'],
                 'created_at' => now(),
