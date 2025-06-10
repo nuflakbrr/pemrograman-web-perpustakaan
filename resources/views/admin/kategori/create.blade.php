@@ -5,29 +5,19 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
                         <div class="header-title">
-                            <h4 class="card-title">Basic Form</h4>
+                            <h4 class="card-title">Form tambah kategori buku</h4>
                         </div>
                     </div>
                     <div class="card-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate, ex ac venenatis
-                            mollis, diam nibh finibus leo</p>
+                        <p>Lengkapi formulir berikut untuk menambahkan data kategori buku.</p>
                         <form>
                             <div class="form-group">
-                                <label class="form-label" for="email">Email address:</label>
-                                <input type="email" class="form-control" id="email1">
+                                <label class="form-label" for="nama_kategori">Nama Kategori:</label>
+                                <input type="text" class="form-control" id="nama_kategori" name="nama_kategori">
                             </div>
                             <div class="form-group">
-                                <label class="form-label" for="pwd">Password:</label>
-                                <input type="password" class="form-control" id="pwd">
-                            </div>
-                            <div class="checkbox mb-3">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value=""
-                                        id="flexCheckDefault3">
-                                    <label class="form-check-label" for="flexCheckDefault3">
-                                        Remember me
-                                    </label>
-                                </div>
+                                <label class="form-label" for="deskripsi">Deskripsi:</label>
+                                <textarea name="deskripsi" id="deskripsi" class="form-control" row="20"></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Buat Kategori</button>
                             <a href="{{ route('kategori.index') }}" class="btn btn-danger">Kembali</a>

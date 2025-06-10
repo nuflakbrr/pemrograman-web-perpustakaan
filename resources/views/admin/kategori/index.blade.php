@@ -15,7 +15,7 @@
                                 data-bs-toggle="data-table">
                                 <thead>
                                     <tr class="ligth">
-                                        <th>Nama</th>
+                                        <th>Nama Kategori</th>
                                         <th>Deskripsi</th>
                                         <th>Dibuat pada</th>
                                         <th style="min-width: 100px">Action</th>
@@ -23,7 +23,7 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>Anna Sthesia</td>
+                                        <td>3786Mdpl</td>
                                         <td>(760) 756 7568</td>
                                         <td>2019/12/01</td>
                                         <td>
