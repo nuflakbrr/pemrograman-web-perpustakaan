@@ -4,14 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Anggota;
 use Illuminate\Http\Request;
-use Illuminate\View\View;
 
 class AnggotaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(): View
+    public function index()
     {
         $anggotas = Anggota::all();
         return view('admin.anggota.index', compact('anggotas'));
@@ -20,7 +19,7 @@ class AnggotaController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(): View
+    public function create()
     {
         return view('admin.anggota.create');
     }
@@ -33,7 +32,10 @@ class AnggotaController extends Controller
         $request->validate([
             'nama' => 'required|string|max:255',
             'alamat' => 'required',
-            'nomor_telepon' => 'required',
+            'nomor_telepon' => [
+                'required',
+                'regex:/^08[0-9]{8,11}$/'
+            ],
             'email' => 'nullable|email|unique:anggota,email',
         ]);
 
@@ -43,9 +45,17 @@ class AnggotaController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     */
+    public function show(Anggota $anggota)
+    {
+        //
+    }
+
+    /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Anggota $anggota): View
+    public function edit(Anggota $anggota)
     {
         return view('admin.anggota.edit', compact('anggota'));
     }

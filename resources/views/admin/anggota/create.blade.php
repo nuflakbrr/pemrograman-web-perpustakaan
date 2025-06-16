@@ -11,30 +11,48 @@
                     <div class="card-body">
                         <p>Lengkapi formulir berikut untuk menambahkan data anggota.</p>
 
-                        <form enctype="multipart/form-data">
+                        <form action="{{ route('anggota.store') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+
                             <div class="form-group">
                                 <label class="form-label" for="nama">Nama:</label>
-                                <input type="text" class="form-control" id="nama" name="nama">
+                                <input type="text" class="form-control @error('nama') is-invalid @enderror"
+                                    id="nama" name="nama" value="{{ old('nama') }}">
+                                @error('nama')
+                                    <div class="text-danger small">{{ $message }}</div>
+                                @enderror
                             </div>
 
                             <div class="form-group">
                                 <label class="form-label" for="alamat">Alamat:</label>
-                                <textarea class="form-control" id="alamat" name="alamat" rows="3"></textarea>
+                                <textarea class="form-control @error('alamat') is-invalid @enderror" id="alamat" name="alamat" rows="3">{{ old('alamat') }}</textarea>
+                                @error('alamat')
+                                    <div class="text-danger small">{{ $message }}</div>
+                                @enderror
                             </div>
 
                             <div class="form-group">
                                 <label class="form-label" for="nomor_telepon">Nomor Telepon:</label>
-                                <input type="text" class="form-control" id="nomor_telepon" name="nomor_telepon">
+                                <input type="text" class="form-control @error('nomor_telepon') is-invalid @enderror"
+                                    id="nomor_telepon" name="nomor_telepon" value="{{ old('nomor_telepon') }}">
+                                @error('nomor_telepon')
+                                    <div class="text-danger small">{{ $message }}</div>
+                                @enderror
                             </div>
 
                             <div class="form-group">
                                 <label class="form-label" for="email">Email:</label>
-                                <input type="email" class="form-control" id="email" name="email">
+                                <input type="email" class="form-control @error('email') is-invalid @enderror"
+                                    id="email" name="email" value="{{ old('email') }}">
+                                @error('email')
+                                    <div class="text-danger small">{{ $message }}</div>
+                                @enderror
                             </div>
 
                             <button type="submit" class="btn btn-primary">Tambah Anggota</button>
                             <a href="{{ route('anggota.index') }}" class="btn btn-danger">Kembali</a>
                         </form>
+
                     </div>
                 </div>
             </div>

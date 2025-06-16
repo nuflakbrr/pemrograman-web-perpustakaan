@@ -10,6 +10,16 @@
                         <a href="{{ route('anggota.create') }}" class="btn btn-primary">Tambah Anggota</a>
                     </div>
                     <div class="card-body px-0">
+                        @if (session('success'))
+                            @if (session('success'))
+                                <div class="alert alert-success alert-dismissible fade show mx-4" role="alert">
+                                    {{ session('success') }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
+                                </div>
+                            @endif
+
+                        @endif
                         <div class="table-responsive">
                             <table id="anggota-list-table" class="table table-striped" role="grid"
                                 data-bs-toggle="data-table">

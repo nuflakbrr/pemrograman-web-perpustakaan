@@ -119,7 +119,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ Route::currentRouteName() == 'anggota.index' ? 'active' : '' }}"
+                    <a class="nav-link {{ Str::startsWith(Route::currentRouteName(), 'anggota') ? 'active' : '' }}"
                         aria-current="page" href="{{ route('anggota.index') }}">
                         <i class="icon">
                             <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none"

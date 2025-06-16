@@ -22,10 +22,11 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('buku/edit', [BukuController::class, 'edit'])->name('buku.edit');
 
     // Anggota
-    Route::get('anggota', [AnggotaController::class, 'index'])->name('anggota.index');
-    Route::get('anggota/create', [AnggotaController::class, 'create'])->name('anggota.create');
-    Route::get('anggota/edit', [AnggotaController::class, 'edit'])->name('anggota.edit');
-    Route::delete('/anggota', [AnggotaController::class, 'destroy'])->name('anggota.destroy');
+    Route::resource('anggota', AnggotaController::class);
+    // Route::get('anggota', [AnggotaController::class, 'index'])->name('anggota.index');
+    // Route::get('anggota/create', [AnggotaController::class, 'create'])->name('anggota.create');
+    // Route::get('anggota/edit', [AnggotaController::class, 'edit'])->name('anggota.edit');
+    // Route::delete('/anggota', [AnggotaController::class, 'destroy'])->name('anggota.destroy');
 
 
     // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
