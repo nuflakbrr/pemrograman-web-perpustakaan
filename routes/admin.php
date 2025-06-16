@@ -22,7 +22,9 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('buku/edit', [BukuController::class, 'edit'])->name('buku.edit');
 
     // Anggota
-    Route::resource('anggota', AnggotaController::class);
+    Route::resource('anggota', AnggotaController::class)->parameters([
+        'anggota' => 'anggota'
+    ]);
     // Route::get('anggota', [AnggotaController::class, 'index'])->name('anggota.index');
     // Route::get('anggota/create', [AnggotaController::class, 'create'])->name('anggota.create');
     // Route::get('anggota/edit', [AnggotaController::class, 'edit'])->name('anggota.edit');

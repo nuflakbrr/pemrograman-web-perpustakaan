@@ -68,11 +68,19 @@ class AnggotaController extends Controller
         $request->validate([
             'nama' => 'required|string|max:255',
             'alamat' => 'required',
-            'nomor_telepon' => 'required',
+            'nomor_telepon' => [
+                'required',
+                'regex:/^08[0-9]{8,11}$/'
+            ],
             'email' => 'nullable|email|unique:anggota,email,' . $anggota->id,
         ]);
 
-        $anggota->update($request->all());
+        $anggota->update([
+            'nama' => $request->nama,
+            'alamat' => $request->alamat,
+            'nomor_telepon' => $request->nomor_telepon,
+            'email' => $request->email,
+        ]);
 
         return redirect()->route('anggota.index')->with('success', 'Data anggota berhasil diperbarui.');
     }

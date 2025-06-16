@@ -11,7 +11,7 @@
                     <div class="card-body">
                         <p>Lengkapi formulir berikut untuk mengubah data anggota</p>
 
-                        <form enctype="multipart/form-data">
+                        <form action="{{ route('anggota.update', $anggota->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menyimpan perubahan?')" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
 
