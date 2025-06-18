@@ -4,6 +4,7 @@ use App\Http\Controllers\BukuController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KategoriBukuController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PetugasController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->prefix('admin')->group(function () {
@@ -19,6 +20,12 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('buku', [BukuController::class, 'index'])->name('buku.index');
     Route::get('buku/create', [BukuController::class, 'create'])->name('buku.create');
     Route::get('buku/edit', [BukuController::class, 'edit'])->name('buku.edit');
+
+    // Petugas
+    Route::get('petugas', [PetugasController::class, 'index'])->name('petugas.index');
+    Route::get('petugas/create', [PetugasController::class, 'create'])->name('petugas.create');
+    Route::get('petugas/edit', [PetugasController::class, 'edit'])->name('petugas.edit');
+
 
     // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
