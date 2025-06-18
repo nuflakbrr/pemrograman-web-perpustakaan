@@ -148,8 +148,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ Route::currentRouteName() == 'dashboard' ? 'active' : '' }}"
-                        aria-current="page" href="{{ route('dashboard') }}">
+                    <a class="nav-link {{ Route::currentRouteName() == 'petugas.index' ? 'active' : '' }}"
+                        aria-current="page" href="{{ route('petugas.index') }}">
                         <i class="icon">
                             <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
