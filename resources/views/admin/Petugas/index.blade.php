@@ -16,7 +16,7 @@
                                 <thead>
                                     <tr class="ligth">
                                         <th>Nama</th>
-                                        <th>Kontak</th>
+                                        <th>Nomer Telepon</th>
                                         <th>Tanggal Bergabung</th>
                                         <th>Posisi</th>
                                         <th>Email</th>

@@ -16,8 +16,8 @@
                                 <input type="text" class="form-control" id="nama_petugas" name="nama_petugas">
                             </div>
                             <div class="form-group">
-                                <label class="form-label" for="deskripsi">Kontak:</label>
-                                <input type="tel" name="kontak" class="form-control" pattern="[0-15] {10-15}" title="nomer terdiri dari 10-15" placeholder="08123456789" required>
+                                <label class="form-label" for="deskripsi">Nomer Teleponk:</label>
+                                <input type="tel" name="nomer_telepon" class="form-control" pattern="[0-15] {10-15}" title="nomer terdiri dari 10-15" placeholder="08123456789" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label" for="posisi">Posisi:</label>
