@@ -22,7 +22,10 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     // Buku
     Route::get('buku', [BukuController::class, 'index'])->name('buku.index');
     Route::get('buku/create', [BukuController::class, 'create'])->name('buku.create');
+    Route::post('buku/create', [BukuController::class, 'store'])->name('buku.store');
     Route::get('buku/edit', [BukuController::class, 'edit'])->name('buku.edit');
+    Route::put('buku/{id}', [BukuController::class, 'update'])->name('buku.update');
+    Route::delete('buku/{id}', [BukuController::class, 'destroy'])->name('buku.destroy');
 
     // Anggota
     Route::resource('anggota', AnggotaController::class)->parameters([
