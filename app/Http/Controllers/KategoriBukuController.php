@@ -70,7 +70,7 @@ class KategoriBukuController extends Controller
      */
     public function destroy(KategoriBuku $kategoriBuku, $id)
     {
-        $kategoriBuku = KategoriBuku::find($id);
+        $kategoriBuku::find($id);
         $kategoriBuku->delete();
 
         return redirect()->route('kategori.index')->with('success', 'Kategori berhasil dihapus');
