@@ -17,10 +17,16 @@
                                 <label class="form-label" for="nama_kategori">Nama Kategori:</label>
                                 <input type="text" class="form-control" id="nama_kategori" name="nama_kategori"
                                     value="{{ $kategoriBuku->nama_kategori }}">
+                                @error('nama_kategori')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label class="form-label" for="deskripsi">Deskripsi:</label>
                                 <textarea name="deskripsi" id="deskripsi" class="form-control" row="20">{{ $kategoriBuku->deskripsi }}</textarea>
+                                @error('deskripsi')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <button type="submit" class="btn btn-primary">Ubah Kategori</button>
                             <a href="{{ route('kategori.index') }}" class="btn btn-danger">Kembali</a>

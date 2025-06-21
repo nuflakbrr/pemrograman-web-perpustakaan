@@ -24,7 +24,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('buku', [BukuController::class, 'index'])->name('buku.index');
     Route::get('buku/create', [BukuController::class, 'create'])->name('buku.create');
     Route::post('buku/create', [BukuController::class, 'store'])->name('buku.store');
-    Route::get('buku/edit', [BukuController::class, 'edit'])->name('buku.edit');
+    Route::get('buku/{id}', [BukuController::class, 'edit'])->name('buku.edit');
     Route::put('buku/{id}', [BukuController::class, 'update'])->name('buku.update');
     Route::delete('buku/{id}', [BukuController::class, 'destroy'])->name('buku.destroy');
 
@@ -32,6 +32,14 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::resource('anggota', AnggotaController::class)->parameters([
         'anggota' => 'anggota'
     ]);
+
+    // petugas
+    Route::get('petugas', [PetugasController::class, 'index'])->name('petugas.index');
+    Route::get('petugas/create', [PetugasController::class, 'create'])->name('petugas.create');
+    Route::post('petugas/create', [PetugasController::class, 'store'])->name('petugas.store');
+    Route::get('petugas/edit', [PetugasController::class, 'edit'])->name('petugas.edit');
+    Route::put('petugas/{id}', [PetugasController::class, 'update'])->name('petugas.update');
+    Route::delete('petugas/{id}', [PetugasController::class, 'destroy'])->name('petugas.destroy');
     // Route::get('anggota', [AnggotaController::class, 'index'])->name('anggota.index');
     // Route::get('anggota/create', [AnggotaController::class, 'create'])->name('anggota.create');
     // Route::get('anggota/edit', [AnggotaController::class, 'edit'])->name('anggota.edit');
