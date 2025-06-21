@@ -7,8 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class KategoriBuku extends Model
 {
-    protected $guard = [
-        'id'
+    protected $table = 'kategori_buku';
+
+    protected $fillable = [
+        'nama_kategori',
+        'deskripsi',
     ];
 
     public function buku()

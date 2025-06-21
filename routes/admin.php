@@ -14,7 +14,10 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     // Kategori Buku
     Route::get('kategori', [KategoriBukuController::class, 'index'])->name('kategori.index');
     Route::get('kategori/create', [KategoriBukuController::class, 'create'])->name('kategori.create');
-    Route::get('kategori/edit', [KategoriBukuController::class, 'edit'])->name('kategori.edit');
+    Route::post('kategori/create', [KategoriBukuController::class, 'store'])->name('kategori.store');
+    Route::get('kategori/{id}', [KategoriBukuController::class, 'edit'])->name('kategori.edit');
+    Route::put('kategori/{id}', [KategoriBukuController::class, 'update'])->name('kategori.update');
+    Route::delete('kategori/{id}', [KategoriBukuController::class, 'destroy'])->name('kategori.destroy');
 
     // Buku
     Route::get('buku', [BukuController::class, 'index'])->name('buku.index');

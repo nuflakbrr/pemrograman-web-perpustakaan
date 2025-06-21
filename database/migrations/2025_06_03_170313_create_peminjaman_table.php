@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('peminjaman', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('anggota_id')->constrained('anggota')->onDelete('restrict');
-            $table->foreignId('buku_id')->constrained('buku')->onDelete('restrict');
-            $table->foreignId('petugas_id')->constrained('users')->onDelete('restrict');
+            $table->foreignId('anggota_id')->constrained('anggota')->onDelete('cascade');
+            $table->foreignId('buku_id')->constrained('buku')->onDelete('cascade');
+            $table->foreignId('petugas_id')->constrained('users')->onDelete('cascade');
             $table->date('tanggal_peminjaman');
             $table->date('tanggal_pengembalian')->nullable();
             $table->enum('status', ['dipinjam', 'dikembalikan'])->default('dipinjam');

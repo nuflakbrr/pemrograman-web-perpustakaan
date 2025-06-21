@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="conatiner-fluid content-inner mt-n5 py-0">
+    <div class="py-0 conatiner-fluid content-inner mt-n5">
         <div class="row">
             <div class="col-sm-12">
                 <div class="card">
@@ -10,7 +10,8 @@
                     </div>
                     <div class="card-body">
                         <p>Lengkapi formulir berikut untuk menambahkan data kategori buku.</p>
-                        <form>
+                        <form action="{{ route('kategori.store') }}" method="POST">
+                            @csrf
                             <div class="form-group">
                                 <label class="form-label" for="nama_kategori">Nama Kategori:</label>
                                 <input type="text" class="form-control" id="nama_kategori" name="nama_kategori">

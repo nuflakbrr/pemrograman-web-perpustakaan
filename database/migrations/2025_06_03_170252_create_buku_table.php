@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('isbn')->unique();
             $table->text('cover')->nullable();
             $table->unsignedInteger('jumlah_tersedia');
-            $table->foreignId('kategori_id')->constrained('kategori_buku')->onDelete('restrict');
+            $table->foreignId('kategori_id')->constrained('kategori_buku')->onDelete('cascade');
             $table->timestamps();
         });
     }
