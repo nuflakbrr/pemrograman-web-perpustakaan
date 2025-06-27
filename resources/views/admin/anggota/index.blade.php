@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="conatiner-fluid content-inner mt-n5 py-0">
+    <div class="py-0 conatiner-fluid content-inner mt-n5">
         <div class="row">
             <div class="col-sm-12">
                 <div class="card">
@@ -9,16 +9,13 @@
                         </div>
                         <a href="{{ route('anggota.create') }}" class="btn btn-primary">Tambah Anggota</a>
                     </div>
-                    <div class="card-body px-0">
+                    <div class="px-0 card-body">
                         @if (session('success'))
-                            @if (session('success'))
-                                <div class="alert alert-success alert-dismissible fade show mx-4" role="alert">
-                                    {{ session('success') }}
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                        aria-label="Close"></button>
-                                </div>
-                            @endif
-
+                            <div class="mx-4 alert alert-success alert-dismissible fade show" role="alert">
+                                {{ session('success') }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
                         @endif
                         <div class="table-responsive">
                             <table id="anggota-list-table" class="table table-striped" role="grid"
@@ -76,8 +73,7 @@
                                                         @method('DELETE')
                                                         <button type="submit" class="btn btn-sm btn-icon btn-danger"
                                                             data-bs-toggle="tooltip" data-bs-placement="top"
-                                                            title="Delete"
-                                                            onclick="return confirm('Yakin ingin menghapus anggota ini?')">
+                                                            title="Delete">
                                                             <span class="btn-inner">
                                                                 <svg class="icon-20" width="20" viewBox="0 0 24 24"
                                                                     fill="none" xmlns="http://www.w3.org/2000/svg"

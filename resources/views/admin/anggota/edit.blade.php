@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="conatiner-fluid content-inner mt-n5 py-0">
+    <div class="py-0 conatiner-fluid content-inner mt-n5">
         <div class="row">
             <div class="col-sm-12">
                 <div class="card">
@@ -11,7 +11,7 @@
                     <div class="card-body">
                         <p>Lengkapi formulir berikut untuk mengubah data anggota</p>
 
-                        <form action="{{ route('anggota.update', $anggota->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menyimpan perubahan?')" enctype="multipart/form-data">
+                        <form action="{{ route('anggota.update', $anggota->id) }}" method="POST">
                             @csrf
                             @method('PUT')
 

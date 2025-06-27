@@ -10,6 +10,13 @@
                         <a href="{{ route('buku.create') }}" class="btn btn-primary">Tambah Buku</a>
                     </div>
                     <div class="px-0 card-body">
+                        @if (session('success'))
+                            <div class="mx-4 alert alert-success alert-dismissible fade show" role="alert">
+                                {{ session('success') }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                        @endif
                         <div class="table-responsive">
                             <table id="user-list-table" class="table table-striped" role="grid"
                                 data-bs-toggle="data-table">
