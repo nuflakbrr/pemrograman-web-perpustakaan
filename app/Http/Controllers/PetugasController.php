@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Petugas;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -13,7 +13,8 @@ class PetugasController extends Controller
      */
     public function index(): View
     {
-        return view('admin.petugas.index');
+        $petugas = User::all();
+        return view('admin.petugas.index', compact('petugas'));
     }
 
     /**
@@ -35,7 +36,7 @@ class PetugasController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Petugas $petugas): View
+    public function edit(User $petugas): View
     {
         return view('admin.petugas.edit');
     }
@@ -43,7 +44,7 @@ class PetugasController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Petugas $petugas)
+    public function update(Request $request, User $petugas)
     {
         //
     }
@@ -51,7 +52,7 @@ class PetugasController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Petugas $petugas)
+    public function destroy(User $petugas)
     {
         //
     }
