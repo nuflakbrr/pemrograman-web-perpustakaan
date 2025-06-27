@@ -20,12 +20,15 @@
                                 <input type="tel" name="nomer_telepon" class="form-control" pattern="[0-15] {10-15}" title="nomer terdiri dari 10-15" placeholder="08123456789" required>
                             </div>
                             <div class="form-group">
-                                <label class="form-label" for="posisi">Posisi:</label>
-                                <input type="text" class="form-control" id="posisi" name="posisi">
+                               <label class="form-label" for="posisi">Posisi:</label>
+                                <select class="form-control" id="posisi" name="posisi">
+                                <option value="">-- Pilih Posisi --</option>
+                                <option value="dipinjam">Admin</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label class="form-label" for="email">Email:</label>
-                                <input type="text" class="form-control" id="email" name="email">
+                                <input type="email" class="form-control" id="email" name="email">
                             </div>
                             <button type="submit" class="btn btn-primary">Ubah Data Petugas</button>
                             <a href="{{ route('petugas.index') }}" class="btn btn-danger">Kembali</a>

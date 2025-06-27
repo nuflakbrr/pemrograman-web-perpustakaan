@@ -21,11 +21,14 @@
                             </div>
                             <div class="form-group">
                                 <label class="form-label" for="posisi">Posisi:</label>
-                                <input type="text" class="form-control" id="posisi" name="posisi">
+                                <select class="form-control" id="posisi" name="posisi">
+                                <option value="">-- Pilih Posisi --</option>
+                                <option value="dipinjam">Admin</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label class="form-label" for="email">Email:</label>
-                                <input type="text" class="form-control" id="email" name="email">
+                                <input type="email" class="form-control" id="email" name="email">
                             </div>
                             <button type="submit" class="btn btn-primary">Buat Data Petugas</button>
                             <a href="{{ route('petugas.index') }}" class="btn btn-danger">Kembali</a>
