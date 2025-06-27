@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nama_petugas');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('position');
+            $table->enum('position', ['admin', 'staff']);
             $table->string('nomor_telepon');
             $table->rememberToken();
             $table->timestamps();

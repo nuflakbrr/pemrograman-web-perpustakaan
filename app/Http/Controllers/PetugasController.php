@@ -30,30 +30,55 @@ class PetugasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama_petugas' => 'required|string|max:255',
+            'email' => 'required|email|unique:users',
+            'password' => 'required',
+            'position' => 'required|string|max:255',
+            'nomor_telepon' => 'required',
+        ]);
+
+        User::create($request->all());
+
+        return redirect()->route('petugas.index')->with('success', 'Petugas berhasil ditambahkan');
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(User $petugas): View
+    public function edit(User $petugas, $id): View
     {
-        return view('admin.petugas.edit');
+        $petugas = User::find($id);
+        return view('admin.petugas.edit', compact('petugas'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, User $petugas)
+    public function update(Request $request, User $petugas, $id)
     {
-        //
+        $request->validate([
+            'nama_petugas' => 'required|string|max:255',
+            'email' => 'required|email',
+            'password' => 'required',
+            'position' => 'required|string|max:255',
+            'nomor_telepon' => 'required',
+        ]);
+
+        $petugas = User::find($id);
+        $petugas->update($request->all());
+
+        return redirect()->route('petugas.index')->with('success', 'Petugas berhasil diupdate');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User $petugas)
+    public function destroy(User $petugas, $id)
     {
-        //
+        $petugas = User::find($id);
+        $petugas->delete();
+
+        return redirect()->route('petugas.index')->with('success', 'Petugas berhasil dihapus');
     }
 }

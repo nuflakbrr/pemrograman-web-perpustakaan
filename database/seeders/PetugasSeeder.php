@@ -13,21 +13,21 @@ class PetugasSeeder extends Seeder
         $petugass = [
             [
                 'nama_petugas' => 'Admin Perpustakaan',
-                'position' => 'Kepala Perpustakaan',
+                'position' => 'admin',
                 'nomor_telepon' => '081234567800',
                 'email' => 'admin@perpustakaan.com',
                 'password' => bcrypt('password')
             ],
             [
                 'nama_petugas' => 'Librarian 1',
-                'position' => 'Petugas Peminjaman',
+                'position' => 'staff',
                 'nomor_telepon' => '081234567801',
                 'email' => 'librarian1@perpustakaan.com',
                 'password' => bcrypt('password')
             ],
             [
                 'nama_petugas' => 'Librarian 2',
-                'position' => 'Petugas Pengembalian',
+                'position' => 'staff',
                 'nomor_telepon' => '081234567802',
                 'email' => 'librarian2@perpustakaan.com',
                 'password' => bcrypt('password')
