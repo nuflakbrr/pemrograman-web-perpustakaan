@@ -37,7 +37,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('petugas', [PetugasController::class, 'index'])->name('petugas.index');
     Route::get('petugas/create', [PetugasController::class, 'create'])->name('petugas.create');
     Route::post('petugas/create', [PetugasController::class, 'store'])->name('petugas.store');
-    Route::get('petugas/edit', [PetugasController::class, 'edit'])->name('petugas.edit');
+    Route::get('petugas/{id}', [PetugasController::class, 'edit'])->name('petugas.edit');
     Route::put('petugas/{id}', [PetugasController::class, 'update'])->name('petugas.update');
     Route::delete('petugas/{id}', [PetugasController::class, 'destroy'])->name('petugas.destroy');
     // Route::get('anggota', [AnggotaController::class, 'index'])->name('anggota.index');
