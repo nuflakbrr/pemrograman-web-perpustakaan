@@ -32,6 +32,13 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @empty($anggotas)
+                                        <tr>
+                                            <td colspan="7">
+                                                <p class="text-center">Belum ada anggota</p>
+                                            </td>
+                                        </tr>
+                                    @endempty
                                     @php $no = 1; @endphp
                                     @foreach ($anggotas as $anggota)
                                         <tr>

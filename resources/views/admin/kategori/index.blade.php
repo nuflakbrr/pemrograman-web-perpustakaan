@@ -22,6 +22,7 @@
                                 data-bs-toggle="data-table">
                                 <thead>
                                     <tr class="ligth">
+                                        <th>No</th>
                                         <th>Nama Kategori</th>
                                         <th>Deskripsi</th>
                                         <th>Dibuat pada</th>
@@ -29,8 +30,17 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @empty($kategoriBuku)
+                                        <tr>
+                                            <td colspan="5">
+                                                <p class="text-center">Belum ada kategori</p>
+                                            </td>
+                                        </tr>
+                                    @endempty
+                                    @php $no = 1; @endphp
                                     @foreach ($kategoriBuku as $item)
                                         <tr>
+                                            <td>{{ $no++ }}</td>
                                             <td>{{ $item->nama_kategori }}</td>
                                             <td>{{ $item->deskripsi }}</td>
                                             <td>{{ $item->created_at->diffForHumans() }}</td>

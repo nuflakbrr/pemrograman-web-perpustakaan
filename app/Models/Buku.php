@@ -9,19 +9,15 @@ class Buku extends Model
 {
     protected $table = 'buku';
 
-    protected $fillable = [
-        'judul_buku',
-        'penulis',
-        'penerbit',
-        'tahun_penerbitan',
-        'isbn',
-        'cover',
-        'jumlah_tersedia',
-        'kategori_id',
-    ];
+    protected $guarded = ['id'];
 
     public function kategori()
     {
         return $this->belongsTo(KategoriBuku::class);
+    }
+
+    public function peminjaman()
+    {
+        return $this->hasMany(Peminjaman::class);
     }
 }

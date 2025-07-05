@@ -9,22 +9,24 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <p>List Data Peminjaman Buku.</p>
+                        <p>Lengkapi formulir berikut untuk menambahkan data peminjaman buku.</p>
                         <form>
                             <div class="form-group">
                                 <label class="form-label" for="tanggal_peminjaman">Tanggal Peminjaman:</label>
-                                <input type="date" class="form-control" id="tanggal_peminjaman" name="tanggal_peminjaman">
+                                <input type="date" class="form-control" id="tanggal_peminjaman"
+                                    name="tanggal_peminjaman">
                             </div>
                             <div class="form-group">
                                 <label class="form-label" for="tanggal_peminjaman">Tanggal Pengembalian:</label>
-                                <input type="date" class="form-control" id="tanggal_pengembalian" name="tanggal_pengembalian">
+                                <input type="date" class="form-control" id="tanggal_pengembalian"
+                                    name="tanggal_pengembalian">
                             </div>
-                          <div class="form-group">
+                            <div class="form-group">
                                 <label class="form-label" for="status">Status:</label>
                                 <select class="form-control" id="status" name="status">
-                                <option value="">-- Pilih Status --</option>
-                                <option value="dipinjam">Dipinjam</option>
-                                <option value="dikembalikan">Dikembalikan</option>
+                                    <option value="">-- Pilih Status --</option>
+                                    <option value="dipinjam">Dipinjam</option>
+                                    <option value="dikembalikan">Dikembalikan</option>
                                 </select>
                             </div>
 

@@ -46,9 +46,8 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('peminjaman', [PeminjamanController::class, 'index'])->name('peminjaman.index');
     Route::get('peminjaman/create', [PeminjamanController::class, 'create'])->name('peminjaman.create');
     Route::post('peminjaman/create', [PeminjamanController::class, 'store'])->name('peminjaman.store');
-    Route::get('peminjaman/edit', [PeminjamanController::class, 'edit'])->name('peminjaman.edit');
+    Route::get('peminjaman/{id}', [PeminjamanController::class, 'edit'])->name('peminjaman.edit');
     Route::put('peminjaman/{id}', [PeminjamanController::class, 'update'])->name('peminjaman.update');
-    Route::delete('peminjaman/{id}', [PeminjamanController::class, 'destroy'])->name('peminjaman.destroy');
 
     // Route::get('anggota', [AnggotaController::class, 'index'])->name('anggota.index');
     // Route::get('anggota/create', [AnggotaController::class, 'create'])->name('anggota.create');

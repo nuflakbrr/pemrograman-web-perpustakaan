@@ -22,7 +22,9 @@
                                 data-bs-toggle="data-table">
                                 <thead>
                                     <tr class="ligth">
-                                        <th>Nama</th>
+                                        <th>No</th>
+                                        <th>Judul Buku</th>
+                                        <th>Cover Buku</th>
                                         <th>Penulis</th>
                                         <th>Penerbit</th>
                                         <th>Kategori</th>
@@ -32,9 +34,26 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @empty($buku)
+                                        <tr>
+                                            <td colspan="9">
+                                                <p class="text-center">Belum ada buku</p>
+                                            </td>
+                                        </tr>
+                                    @endempty
+                                    @php $no = 1; @endphp
                                     @foreach ($buku as $item)
                                         <tr>
+                                            <td>{{ $no++ }}</td>
                                             <td>{{ $item->judul_buku }}</td>
+                                            <td>
+                                                @if ($item->cover)
+                                                    <img src="{{ '/storage/images/' . $item->cover }}"
+                                                        alt="{{ $item->judul_buku }}" class="w-25">
+                                                @else
+                                                    <span class="badge bg-secondary">Tidak ada cover</span>
+                                                @endif
+                                            </td>
                                             <td>{{ $item->penulis }}</td>
                                             <td>{{ $item->penerbit }}</td>
                                             <td>{{ $item->kategori->nama_kategori }}</td>
@@ -66,8 +85,8 @@
                                                             </svg>
                                                         </span>
                                                     </a>
-                                                    <form action="{{ route('buku.destroy', $item->id) }}" method="POST"
-                                                        class="d-inline">
+                                                    <form action="{{ route('buku.destroy', $item->id) }}"
+                                                        method="POST" class="d-inline">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" class="btn btn-sm btn-icon btn-danger"

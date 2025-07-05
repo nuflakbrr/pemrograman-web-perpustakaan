@@ -9,10 +9,7 @@ class KategoriBuku extends Model
 {
     protected $table = 'kategori_buku';
 
-    protected $fillable = [
-        'nama_kategori',
-        'deskripsi',
-    ];
+    protected $guarded = ['id'];
 
     public function buku()
     {

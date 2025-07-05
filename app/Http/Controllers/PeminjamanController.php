@@ -13,7 +13,8 @@ class PeminjamanController extends Controller
      */
     public function index(): View
     {
-        return view('admin.peminjaman.index');
+        $peminjamans = Peminjaman::all();
+        return view('admin.peminjaman.index', compact('peminjamans'));
     }
 
     /**

@@ -6,11 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Anggota extends Model
 {
-
-    protected $guarded = [
-        'id'
-    ];
-
     protected $table = 'anggota';
 
+    protected $guarded = ['id'];
+
+    public function peminjaman()
+    {
+        return $this->hasMany(Peminjaman::class);
+    }
 }
