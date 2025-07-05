@@ -23,7 +23,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @empty($peminjamans)
+                                    @empty($peminjaman)
                                         <tr>
                                             <td colspan="5">
                                                 <p class="text-center">Belum ada peminjaman buku</p>
@@ -31,7 +31,7 @@
                                         </tr>
                                     @endempty
                                     @php $no = 1; @endphp
-                                    @foreach ($peminjamans as $item)
+                                    @foreach ($peminjaman as $item)
                                         <tr>
                                             <td>{{ $no++ }}</td>
                                             <td>{{ $item->tanggal_peminjaman }}</td>
